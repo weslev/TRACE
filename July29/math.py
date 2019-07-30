@@ -1,4 +1,5 @@
 startList = []
+listPlus2R = []
 listPlus2 = []
 listDiv3 = []
 listEvOd = []
@@ -6,6 +7,12 @@ listEvOd = []
 # Creates and prints a list from 1 to 10
 startList = [x for x in range(1, 11)]
 print(startList)
+
+# Creates and prints a list from 1 to 10 with 2 added to all numbers (regular way)
+for x in range(1,11):
+    listPlus2R.append(x)
+print(listPlus2R)
+    
 
 # Creates and prints a list from 1 to 10 with 2 added to all numbers
 listPlus2 = [x + 2 for x in startList]
