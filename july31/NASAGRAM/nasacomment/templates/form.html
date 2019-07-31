@@ -1,0 +1,26 @@
+
+
+<img src="{{photoUrl}}" style = "display: block; margin-left: auto; margin-right: auto"/>
+
+
+{% for comment in comments %}
+<div style = "text-align: center">"{{comment.comment}}" "{{comment.rating}}" <form method="POST" action="/delete/{{comment.id}}/">{% csrf_token %}<button>DELETE</button></form></div> 
+{% endfor %}
+
+<form action="/create" method="post" class="form-example">
+    {% csrf_token %}
+    <div class='form-example"'>
+        <input type="hidden" name="url" value="{{photoUrl}}"/>
+    </div>
+    <div class="form-example">
+        <label for="comment">Enter your comment: </label>
+        <input type="text" name="comment" id="comment" required>
+    </div>
+    <div class="form-example">
+        <label for="rating">Enter your rating: </label>
+        <input type="number" name="rating" id="rating" min="0" max="5" required>
+    </div>
+    <div class="form-example">
+        <input type="submit" value="Submit">
+    </div>
+</form>

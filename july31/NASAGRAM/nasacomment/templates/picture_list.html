@@ -1,0 +1,9 @@
+<header>
+    <h1 style = "text-align: center">NASAGRAM!</h1>
+    <h3 style = "text-align: center">Click on a photo</h3>
+  </header>
+{% for url in urls %}
+<a href="http://127.0.0.1:8000/create?photourl={{url}}">
+    <img src="{{url}}" style = "width:100%; max-width:400px; display: block; margin-left: auto; margin-right: auto">
+</a>
+{% endfor %}
